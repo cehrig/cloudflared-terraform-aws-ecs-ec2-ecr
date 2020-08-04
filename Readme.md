@@ -4,9 +4,9 @@ This is a proof-of-concept for running Cloudflare Argo tunnel (cloudflared) in A
 Assumptions:
 - cloudflared will be deployed to Elastic Container Service (ECS) on EC2 instances
 - the Argo Tunnel Token (cert.pem) will be stored in AWS Secrets Manager
-- cloudflared will be used a a forwarding proxy to HTTPBin (the origin is configurable via variables.tf)
+- cloudflared will be used a a forwarding proxy to HTTPBin (the origin is configurable via `variables.tf`)
 - you have a AWS subscription - this PoC used the AWS free-tier
-- your AWS region is eu-central-1 - furthermore we are going to use eu-central-1c as availability zone
+- your AWS region is eu-central-1 - furthermore we are going to use eu-central-1c as availability zone (configurable via `variables.tf`)
 
 ## The cloudflared Docker Image
 Cloudflare maintains a public Docker image for cloudflared - the Daemon that runs Cloudflare Argo Tunnel. Since we are going to
@@ -46,7 +46,8 @@ Terraform will create quite some resources when calling `terraform apply`:
 - Subnets, Routing entries, Firewall Rules for the ECS cluster
 - IAM policies (don't use this in production as they might be way to broad)
 
-Before calling `terraform apply` make sure your are changing the image location in `task-definitions/cloudflared.json`:
+Before calling `terraform apply` make sure your are changing the image location in `task-definitions/cloudflared.json`. You
+want to change your AWS account ID and AWS region here.
 
 ## Does it work?
 After Terraform did it's job, you will see a running ECS cluster with 1 node and 1 running task
