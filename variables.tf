@@ -3,7 +3,7 @@ variable "cf_cert_pem_path" {
 }
 
 variable "cf_hostname" {
-  default = "aws-ecs-test.ehrig.io"
+  default = "your-cloudflare.host.name"
 }
 
 variable "cf_origin" {

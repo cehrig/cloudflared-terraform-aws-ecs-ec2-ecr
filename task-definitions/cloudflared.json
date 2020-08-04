@@ -1,7 +1,7 @@
 [
   {
     "name": "ecs-cloudflared",
-    "image": "243331737776.dkr.ecr.eu-central-1.amazonaws.com/ecr-cloudflared:latest",
+    "image": "<your AWS account ID>.dkr.ecr.eu-central-1.amazonaws.com/ecr-cloudflared:latest",
     "cpu": 1,
     "memory": 32,
     "links": [],
