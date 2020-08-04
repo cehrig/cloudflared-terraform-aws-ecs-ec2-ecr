@@ -58,7 +58,7 @@ want to change your AWS account ID and AWS region here.
 After Terraform did it's job, you will see a running ECS cluster with 1 node and 1 running task
 ![ecs](img/ecs.png)
 
-The task definition will describe environment variables for your hostname on Cloudflare, your Origin hostname. It will also
+The task definition will describe environment variables for your hostname on Cloudflare and the hostname of your Origin. It will also
 indicate that ECS loaded cert.pem from AWS Secrets Manager
 ![ecs](img/task-definition.png)
 
