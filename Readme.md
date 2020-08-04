@@ -59,3 +59,6 @@ indicate that ECS loaded cert.pem from AWS Secrets Manager
 
 `http://<IP address of your Elastic Loadbalancer>:32803/metrics` will expose prometheus friendly metrics.
 ![ecs](img/metrics.png)
+
+## Credits
+Big portions of the Terraform description in this repository are copied from https://github.com/alex/ecs-terraform. Kudos to Alex!
