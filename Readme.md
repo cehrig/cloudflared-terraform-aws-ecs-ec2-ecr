@@ -11,7 +11,7 @@ Assumptions:
 ## The cloudflared Docker Image
 Cloudflare maintains a public Docker image for cloudflared - the Daemon that runs Cloudflare Argo Tunnel. Since we are going to
 pull cert.pem from AWS Secrets Manager and the only way to do that is by passing an environment variable to our container, we are
-going to use a bash capibility called `process substitution`. The cloudflare Docker image doesn't ship bash, so we have to
+going to use a bash capability called `process substitution`. The cloudflare Docker image doesn't ship bash, so we have to
 use a custom Dockerfile:
 
 ```Dockerfile
