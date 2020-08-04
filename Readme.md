@@ -42,7 +42,7 @@ docker push <your AWS account ID>.dkr.ecr.eu-central-1.amazonaws.com/ecr-cloudfl
 
 ## Get cert.pem from cloudflare
 Please refer to https://developers.cloudflare.com/argo-tunnel/quickstart for obtaining your cert.pem from Cloudflare. 
-We assume this file will be stored in it's default location `~/.cloudflared/cert.pem`
+We assume this file will be stored in it's default location `~/.cloudflared/cert.pem` (configurable via `variables.tf`)
 
 ## Terraform apply
 Terraform will create quite some resources when calling `terraform apply`:
