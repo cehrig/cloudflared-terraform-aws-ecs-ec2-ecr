@@ -1,0 +1,37 @@
+[
+  {
+    "name": "ecs-cloudflared",
+    "image": "243331737776.dkr.ecr.eu-central-1.amazonaws.com/ecr-cloudflared:latest",
+    "cpu": 1,
+    "memory": 32,
+    "links": [],
+    "portMappings": [
+      {
+        "containerPort": 32803,
+        "hostPort": 32803,
+        "protocol": "tcp"
+      }
+    ],
+    "essential": true,
+    "entryPoint": [],
+    "command": [],
+    "environment": [
+      {
+        "name": "HOSTNAME",
+        "value": "${cf_hostname}"
+      },
+      {
+        "name": "ORIGIN",
+        "value": "${cf_origin}"
+      }
+    ],
+    "secrets": [
+      {
+        "valueFrom": "${aws_cert_pem_secret_arn}",
+        "name": "CERTPEM"
+      }
+    ],
+    "mountPoints": [],
+    "volumesFrom": []
+  }
+]
