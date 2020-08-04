@@ -22,6 +22,11 @@ COPY --from=0 /usr/local/bin/cloudflared /bin/cloudflared
 ENTRYPOINT ["/bin/bash", "-c", "/bin/cloudflared tunnel --metrics 0.0.0.0:32803 --hostname $HOSTNAME --url $ORIGIN --origincert <(echo \"$CERTPEM\")"]
 ```
 
+Our newly created Docker image accepts three environment variables, that are filled by `task-definitions/cloudflared.json` in this repo:
+- `HOSTNAME`: the hostname that's going to be registered on Cloudflare
+- `ORIGIN`: the origin webserver / arbitrary TCP application cloudflared will proxy to
+- `CERTPEM`: a string containing the Argo Tunnel token, we will read this from Secrets Manager later on
+
 #### Build the Docker Image
 `docker build -t ecr-cloudflared .`
 
